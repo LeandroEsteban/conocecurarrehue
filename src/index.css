@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+:root {
+  font-family: "Manrope", sans-serif;
+  color: #173e31;
+  background: #f8f6ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+:where(a, button, input, select):focus-visible {
+  outline: 2px solid #142e25;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #fff;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 60;
+  transform: translateY(-160%);
+  border-radius: 0.5rem;
+  background: #173e31;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+.portada-copy {
+  text-shadow: 0 1px 6px rgb(8 29 22 / 80%);
+}
+
+.portada-copy::before {
+  position: absolute;
+  z-index: -1;
+  inset: -5rem -8rem;
+  background: radial-gradient(ellipse closest-side at center, rgb(8 29 22 / 85%) 20%, rgb(8 29 22 / 74%) 58%, rgb(8 29 22 / 32%) 80%, rgb(8 29 22 / 0%) 100%);
+  content: "";
+  pointer-events: none;
+}
+
+.portada-slide {
+  z-index: 0;
+  opacity: 0;
+  transform: scale(1.045);
+  transition: opacity 0s 450ms;
+}
+
+.portada-slide[data-active="true"] {
+  z-index: 1;
+  opacity: 1;
+  animation: portada-zoom 5s linear both;
+  transition: opacity 450ms ease;
+}
+
+@keyframes portada-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.045); }
+}
+
+.nav-link {
+  position: relative;
+  padding: 28px 0 26px;
+  color: #536258;
+  font-size: 13px;
+  font-weight: 700;
+  transition: color 180ms ease;
+}
+
+.nav-link::after {
+  position: absolute;
+  right: 0;
+  bottom: 18px;
+  left: 0;
+  height: 2px;
+  content: "";
+  background: #a23e54;
+  transform: scaleX(0);
+  transition: transform 180ms ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #173e31;
+}
+
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portada-slide {
+    transition-delay: 0s;
+  }
+
+  .portada-slide[data-active="true"] {
+    animation: none;
+    transform: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

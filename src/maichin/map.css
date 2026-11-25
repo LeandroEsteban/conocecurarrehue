@@ -1,0 +1,36 @@
+.maichin-map .leaflet-bar a {
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+}
+
+.maichin-map .leaflet-control-attribution {
+  color: #173e31;
+  background: #fff;
+}
+
+.maichin-map .leaflet-control-attribution a,
+.maichin-map .leaflet-popup-content a {
+  color: #1d5a43;
+}
+
+.maichin-map .maichin-pin {
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px #173e3166;
+}
+
+.maichin-map .maichin-pin:focus-visible {
+  outline: 3px solid #142e25;
+  outline-offset: 3px;
+}
+
+.maichin-map .leaflet-popup-close-button {
+  min-width: 32px;
+  min-height: 32px;
+}

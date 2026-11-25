@@ -1,0 +1,15 @@
+{
+  "title": "Curarrehue · Territorio Vivo",
+  "language": "es-CL",
+  "description": "Conoce las iniciativas de turismo, naturaleza y producción local de Curarrehue, en la Región de La Araucanía.",
+  "icons": {
+    "icon": "/Images/favicon-conocecurarrehue.png"
+  },
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
